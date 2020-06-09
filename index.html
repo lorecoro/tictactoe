@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Tic Tac Toe</title>
+
+<head>
+	<title>Tic Tac Toe</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="src/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap" rel="stylesheet">
+</head>
 
-  <body>
+<body>
     <h1>Tic Tac Toe</h1>
-    <div class="container">
-      <div id="board" class="board"></div>
-      <div class="player">
-        Current player: <span id="current-player" class="cell">X</span>
-      </div>
+        <div class="container">
+        <div id="board" class="board"></div>
+        <div id="player" class="player">
+            <p>Current player: <span id="current-player" class="cell">X</span></p>
+            <input type="button" value="Reset board" id="reset">
+            <p id="message"></p>
+        </div>
     </div>
-    <script src="src/index.js"></script>
-  </body>
+	<script src="src/index.js">
+	</script>
+</body>
+
 </html>
