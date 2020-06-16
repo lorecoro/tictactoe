@@ -295,11 +295,11 @@ const clickEvent = (event) => {
         const messagenode = document.getElementById("message");
         messagenode.innerHTML = message;
         if (!end) {
-            alert(`Player ${(xo === "X" ? 1 : 2)} won!`);
+            alert(`Player ${(xo === "x" ? 1 : 2)} won!`);
         }
         end = true;
     };
-    xo = (xo === "X") ? "O" : "X";
+    xo = (xo === "x") ? "o" : "x";
     currentPlayer.innerText = xo;
 }
 
