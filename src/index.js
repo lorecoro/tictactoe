@@ -1,6 +1,7 @@
 const columns = 5;
 const rows = 5;
 let end = false;
+let interval;
 
 const buildrow = (x, y) => {
     let row = '<tr>';
@@ -134,26 +135,55 @@ const clickEvent = (event) => {
     const currentPlayer = document.getElementById("current-player");
     let xo = currentPlayer.innerText;
     event.target.innerHTML = xo;
-    xo = (xo === "X") ? "O" : "X";
+    xo = (xo === "x") ? "o" : "x";
+    event.target.className += (xo === "x") ? " cell-x" : " cell-o";
     currentPlayer.innerText = xo;
     const message = checkWinner();
+    clearInterval(interval);
     if (message !== '') {
         const messagenode = document.getElementById("message");
         messagenode.innerHTML = message;
-        alert(`Player ${(xo === "X" ? 2 : 1)} won!`);
+        alert(`Player ${(xo === "x" ? 2 : 1)} won!`);
         end = true;
-    };
+    }
+    else {
+        resetTimer();
+    }
 }
 
 const initializeCode = () => {
     console.log("Initializing");
     const button = document.getElementById("reset");
     button.addEventListener("click", event => {
-      resetBoard();
-      event.stopPropagation();
+        resetBoard();
+        event.stopPropagation();
     });
+}
+
+const resetTimer = () => {
+    const pbar = document.getElementById("progress-bar");
+    pbar.style.width = '100%'; 
+    const timeLeft = document.getElementById("time-left");
+    timeLeft.innerText = "10";
+    const coundown = () => {
+        if (count <= 0) {
+            const currentPlayer = document.getElementById("current-player");
+            let xo = currentPlayer.innerText;
+            xo = (xo === "x") ? "o" : "x";
+            currentPlayer.innerText = xo;
+            count = 100;
+            timeLeft.innerText = "10";
+        } else {
+            timeLeft.innerText = (count/10 - 1);
+            count -= 10; 
+        }
+        pbar.style.width = count + '%'; 
+    }
+    let count = 100;
+    interval = setInterval(coundown, 1000);
 }
 
 initializeCode();
 resetBoard();
+resetTimer();
 
