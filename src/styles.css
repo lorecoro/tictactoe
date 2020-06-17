@@ -14,8 +14,8 @@ table {
 td {
   border: 7px solid black;
   margin: 0;
-  height: 60px;
-  width: 60px;
+  height: 59px;
+  width: 59px;
   vertical-align: middle;
 }
 
@@ -49,11 +49,11 @@ input {
 }
 
 .cell-x {
-  background-color: rgb(124, 252, 0);
+  background-color: rgb(250, 128, 114);
 }
 
 .cell-o {
-  background-color: rgb(250, 128, 114);
+  background-color: rgb(124, 252, 0);
 }
 
 #progress-bar {
