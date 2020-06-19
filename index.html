@@ -4,16 +4,17 @@
 <head>
 	<title>Tic Tac Toe</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="src/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="src/styles.css" />
 </head>
 
 <body>
     <h1>Tic Tac Toe</h1>
-        <div class="container">
-        <div id="board" class="board"></div>
-        <div id="player" class="player">
+    <div class="row">
+        <div id="board" class="col s12 m6 board"></div>
+        <div id="player" class="col s12 m6 player">
             <p>Current player: <span id="current-player" class="cell">x</span></p>
             <input type="button" value="Reset board" id="reset">
             <p id="message"></p>
@@ -21,12 +22,12 @@
                 You have <span id="time-left">10</span> seconds to make your move
                 <div class="w3-light-grey w3-round">
                     <div id="progress-bar" class="w3-container w3-round w3-blue" style="width:100%"></div>
-                  </div>
+                </div>
             </div>
         </div>
     </div>
-	<script src="src/index.js">
-	</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="src/index.js"></script>
 </body>
 
 </html>

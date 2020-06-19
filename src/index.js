@@ -4,20 +4,22 @@ let end = false;
 let interval;
 
 const buildrow = (x, y) => {
-    let row = '<tr>';
+    let row = '<div class="row">' +
+        '<div class="col s1"></div>';
     for (let i = 1; i <= x; i++) {
-        row += `<td data-x="${i}" data-y="${y}" class="cell"></td>`;
+        row += `<div class="col s2 cell" data-x="${i}" data-y="${y}"></div>`;
     }
-    row += '</tr>';
+    row += '<div class="col s1"></div>';
+    row += '</div>';
     return row;
 }
 
 const buildtable = (x, y) => {
-    let table = '<table id="table">';
+    let table = '<div id="table">';
     for (let i = y; i >= 1; i--) {
         table += buildrow(x, i);
     }
-    table += '</table>';
+    table += '</div>';
     return table;
 }
 
@@ -43,7 +45,7 @@ const checkWinner = () => {
     }
 
     // Cycle thru all the td's and store the values in the matrix.
-    const cells = document.getElementsByTagName('td');
+    const cells = document.getElementsByClassName('cell');
     let filled = 0;
     let x, y, value;
     for (let i = 0; i < cells.length; i++) {
@@ -186,4 +188,3 @@ const resetTimer = () => {
 initializeCode();
 resetBoard();
 resetTimer();
-

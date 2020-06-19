@@ -11,14 +11,6 @@ table {
   border-collapse: collapse;
 }
 
-td {
-  border: 7px solid black;
-  margin: 0;
-  height: 59px;
-  width: 59px;
-  vertical-align: middle;
-}
-
 input {
   font-size: 30px;
 }
@@ -29,18 +21,23 @@ input {
   align-items: center;
 }
 
-.board, .player {
-  min-width: 50%;
+.row {
+  margin-bottom: 0;
 }
 
 .player {
-  border: 7px solid black;
+  border: 2px solid black;
   margin: 0;
   padding: 20px;
   font-size: 24px;
 }
 
 .cell{
+  border: 2px solid black;
+  margin: 0;
+  height: 59px;
+  width: 59px;
+  vertical-align: middle;
   font-family: 'Helvetica';
   font-weight: 700;
   font-size: 30px;
