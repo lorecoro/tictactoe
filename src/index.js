@@ -134,13 +134,13 @@ const clickEvent = (event) => {
     const currentPlayer = document.getElementById("current-player");
     let xo = currentPlayer.innerText;
     event.target.innerHTML = xo;
-    xo = (xo === "X") ? "O" : "X";
+    xo = (xo === "x") ? "o" : "x";
     currentPlayer.innerText = xo;
     const message = checkWinner();
     if (message !== '') {
         const messagenode = document.getElementById("message");
         messagenode.innerHTML = message;
-        alert(`Player ${(xo === "X" ? 2 : 1)} won!`);
+        alert(`Player ${(xo === "x" ? 2 : 1)} won!`);
         end = true;
     };
 }
